@@ -1,7 +1,10 @@
-import { faker } from '@faker-js/faker/.';
+import { faker } from '@faker-js/faker';
 import { ProductInterface } from './product.model';
-import { CreateProductDto } from './product.dto';
-import { UpdateProductDto } from './product.dto';
+import {
+  CreateProductDto,
+  UpdateProductDto,
+  FindProductDto,
+} from './product.dto';
 
 export const products: ProductInterface[] = [];
 
@@ -23,7 +26,7 @@ export const addProduct = (data: CreateProductDto) => {
 };
 
 export const updateProduct = (
-  id: string,
+  id: ProductInterface['id'], //Typed by index
   changes: UpdateProductDto
 ): ProductInterface => {
   const index = products.findIndex((item) => item.id === id);
@@ -33,4 +36,8 @@ export const updateProduct = (
     ...changes,
   };
   return newData;
+};
+
+export const findProducts = (dto: FindProductDto): FindProductDto => {
+  return dto;
 };

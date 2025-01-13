@@ -4,6 +4,7 @@ import {
   addProduct,
   products,
   updateProduct,
+  findProducts,
 } from './products/product.service';
 import { ProductInterface } from './products/product.model';
 
@@ -25,4 +26,10 @@ const product = products[0];
 updateProduct(product.id, {
   title: 'ESTO ES GENIAL',
   price: 999,
+});
+
+findProducts({
+  stock: 10,
+  color: 'red',
+  isNew: true,
 });
