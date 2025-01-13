@@ -1,2 +1,4 @@
-const my_name = 'Kellbis';
-console.log(my_name);
+(() => {
+  const my_name = 'Kellbis';
+  console.log(my_name);
+})();
