@@ -8,3 +8,9 @@ export interface CreateProductDto
   > {
   categoryId: string;
 }
+
+// The opposite of Omit // type example = Pick<ProductInterface, 'color' | 'description'>; // Pick to choose parameters
+
+export interface UpdateProductDto extends Partial<CreateProductDto> {}
+
+// The opposite of Partial type example2 = Required<ProductInterface>; // All parameters are required

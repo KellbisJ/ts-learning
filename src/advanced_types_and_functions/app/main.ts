@@ -1,6 +1,10 @@
 import { faker } from '@faker-js/faker';
 
-import { addProduct, products } from './products/product.service';
+import {
+  addProduct,
+  products,
+  updateProduct,
+} from './products/product.service';
 import { ProductInterface } from './products/product.model';
 
 addProduct({
@@ -16,4 +20,9 @@ addProduct({
   categoryId: faker.string.uuid(),
 });
 
-// console.log(products);
+console.log(products);
+const product = products[0];
+updateProduct(product.id, {
+  title: 'ESTO ES GENIAL',
+  price: 999,
+});
