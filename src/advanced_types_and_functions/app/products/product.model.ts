@@ -11,7 +11,7 @@ export interface ProductInterface extends BaseModelInterface {
   size?: Sizes;
   color: string;
   price: number;
-  categories: CategoryInterface;
+  category: CategoryInterface;
   isNew: boolean;
   tags: string[];
 }

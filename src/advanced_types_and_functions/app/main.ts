@@ -1,11 +1,9 @@
 import { faker } from '@faker-js/faker';
 
 import { addProduct, products } from './products/product.service';
+import { ProductInterface } from './products/product.model';
 
 addProduct({
-  id: faker.string.uuid(),
-  createdAt: faker.date.recent(),
-  updatedAt: faker.date.recent(),
   title: faker.commerce.productDescription(),
   image: faker.image.url(),
   description: faker.commerce.productDescription(),
@@ -15,13 +13,7 @@ addProduct({
   price: parseInt(faker.commerce.price(), 10),
   isNew: faker.datatype.boolean(),
   tags: faker.helpers.arrayElements(['tag1', 'tag2', 'tag3']),
-
-  categories: {
-    name: faker.commerce.department(),
-    id: faker.string.uuid(),
-    createdAt: faker.date.recent(),
-    updatedAt: faker.date.recent(),
-  },
+  categoryId: faker.string.uuid(),
 });
 
-console.log(products);
+// console.log(products);
