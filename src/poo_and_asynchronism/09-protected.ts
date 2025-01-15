@@ -1,4 +1,4 @@
-export class Animal {
+export abstract class Animal {
   constructor(protected name: string) {}
   move() {
     console.log('Walking');
@@ -28,6 +28,6 @@ export class Dog extends Animal {
   }
 }
 
-const shadow = new Dog('shadow', 'Kellbis');
-shadow.woof(1);
-shadow.move();
+// const shadow = new Dog('shadow', 'Kellbis');
+// shadow.woof(1);
+// shadow.move();
